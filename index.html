@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emily | Prudential</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--blush:#fdf0f0;--card:#fff;--ink:#2a1214;--muted:#6b5154;--line:#efd3d4;--hero:#c8102e;--accent:#c8102e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#170a0c;--blush:#220f12;--card:#2a1316;--ink:#f6e9ea;--muted:#c3a6a9;--line:#4a2a2d;--hero:#9c0f20;--accent:#ff6b73}}
+:root[data-theme="dark"]{--bg:#170a0c;--blush:#220f12;--card:#2a1316;--ink:#f6e9ea;--muted:#c3a6a9;--line:#4a2a2d;--hero:#9c0f20;--accent:#ff6b73}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.8 "Noto Sans SC",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px;position:relative}
+h1,h2,h3{font-family:"Noto Serif SC","Songti SC",Georgia,serif;line-height:1.3;margin:0}
+:focus-visible{outline:3px solid #ffb3b8;outline-offset:3px}
+.hero{background:var(--hero);color:#fff;position:relative;overflow:hidden;padding-bottom:120px}
+.hero::before{content:"";position:absolute;right:-140px;top:-140px;width:480px;height:480px;border-radius:50%;border:70px solid rgba(255,255,255,.09)}
+.hero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:70px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
+nav{display:flex;justify-content:space-between;align-items:center;padding-top:18px;gap:12px}
+.brand{font-family:"Noto Serif SC",Georgia,serif;font-weight:700;font-size:19px}
+nav .r{display:flex;gap:10px;align-items:center}
+.pill{color:#fff;border:1.5px solid rgba(255,255,255,.7);background:transparent;border-radius:999px;padding:5px 15px;font:500 14px/1.5 inherit;font-family:inherit;text-decoration:none;cursor:pointer}
+.pill:hover{background:rgba(255,255,255,.15)}
+.hero h1{font-size:clamp(34px,7vw,58px);font-weight:700;max-width:12em;margin:64px 0 20px}
+.hero p.lead{max-width:30em;font-size:18px;margin:0 0 32px;color:rgba(255,255,255,.92)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font:500 17px/1.4 inherit;font-family:inherit;text-decoration:none;border:2px solid #fff;cursor:pointer}
+.btn.w{background:#fff;color:#c8102e}
+.btn.g{background:transparent;color:#fff}
+.btn.r{background:var(--accent);border-color:var(--accent);color:#fff}
+html[data-lang] .btn.r{color:#fff}
+:root[data-theme="dark"] .btn.r{color:#2a0a0d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.r{color:#2a0a0d}}
+section{padding:56px 0}
+section h2{font-size:29px;margin-bottom:8px}
+.sub{color:var(--muted);margin:0 0 30px;max-width:34em}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc div{border-left:4px solid var(--accent);padding:2px 0 2px 16px}
+.svc h3{font-size:20px;margin-bottom:6px}
+.svc p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+.tint{background:var(--blush)}
+.risks{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.risk{background:var(--blush);border-top:4px solid var(--accent);padding:16px 14px;border-radius:0 0 10px 10px}
+.risk h3{font-size:17px;margin-bottom:6px}
+.risk p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.close{margin:30px 0 0;font:700 clamp(20px,3.4vw,26px)/1.5 "Noto Serif SC",Georgia,serif;color:var(--accent);max-width:28em}
+@media (max-width:860px){.risks{grid-template-columns:repeat(2,1fr)}}
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.plan{padding:18px 0;border-bottom:1px solid var(--line)}
+.plan h3{font-size:20px;color:var(--accent);margin-bottom:4px}
+.plan p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}
+.quote{background:var(--hero);color:#fff;position:relative;overflow:hidden}
+.quote::before{content:"";position:absolute;left:-160px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(255,255,255,.08)}
+.quote .sub{color:rgba(255,255,255,.9)}
+form{background:var(--card);color:var(--ink);border-radius:16px;padding:28px;max-width:560px;box-shadow:0 14px 40px rgba(60,0,8,.28)}
+label{display:block;font-weight:500;margin:0 0 6px;font-size:16px}
+.f{margin-bottom:18px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 12px}
+textarea{min-height:90px;resize:vertical}
+.hint{font-size:14px;color:var(--muted);margin:12px 0 0;line-height:1.6}
+.err{color:#d3202a;font-size:14px;margin:6px 0 0;min-height:1em}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:500}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{background:var(--blush);padding:30px 0 44px;color:var(--muted);font-size:14px;line-height:1.7}
+footer b{color:var(--accent);font-family:"Noto Serif SC",Georgia,serif;font-size:16px}
+@media (max-width:700px){.plans,.svc,.risks{grid-template-columns:1fr}.hero h1{margin-top:44px}.hero{padding-bottom:100px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <span class="brand" data-k="brand"></span>
+      <span class="r"><button class="pill" id="lang" type="button" aria-label="Language"></button><a class="pill" href="#quote" data-k="navCta"></a></span>
+    </nav>
+    <h1 data-k="h1"></h1>
+    <p class="lead" data-k="lead"></p>
+    <div class="btns"><a class="btn w" href="#quote" data-k="b1"></a><a class="btn g" href="#quote" id="rv" data-k="b2"></a></div>
+  </div>
+</header>
+
+<main>
+<section><div class="wrap">
+  <h2 data-k="rkH"></h2>
+  <p class="sub" data-k="rkS"></p>
+  <div class="risks" id="risks"></div>
+  <p class="close" data-k="rkC"></p>
+</div></section>
+
+<section class="tint"><div class="wrap">
+  <h2 data-k="svcH"></h2>
+  <p class="sub" data-k="svcS"></p>
+  <div class="svc" id="svc"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-k="plH"></h2>
+  <p class="sub" data-k="plS"></p>
+  <div class="plans" id="plans"></div>
+</div></section>
+
+<section class="quote" id="quote"><div class="wrap">
+  <h2 data-k="qH"></h2>
+  <p class="sub" data-k="qS"></p>
+  <form id="qf" novalidate>
+    <div class="f"><label for="n" data-k="fn"></label><input id="n" autocomplete="name"><div class="err" id="en"></div></div>
+    <div class="f"><label for="p" data-k="fp"></label><input id="p" type="tel" autocomplete="tel" data-ph="fpp"><div class="err" id="ep"></div></div>
+    <div class="f"><label for="t" data-k="ft"></label><select id="t"></select></div>
+    <div class="f"><label for="a" data-k="fa"></label><input id="a" type="number" min="0" max="100" inputmode="numeric" data-ph="fap"></div>
+    <div class="f"><label for="b" data-k="fb"></label><select id="b"></select><div class="err" id="eb"></div></div>
+    <div class="f"><label for="m" data-k="fm"></label><textarea id="m" data-ph="fmp"></textarea></div>
+    <button class="btn r" type="submit" data-k="send"></button>
+    <p class="hint" data-k="hint"></p>
+  </form>
+</div></section>
+
+<section><div class="wrap">
+  <h2 data-k="faqH"></h2>
+  <div id="faq"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <b>Emily</b> &nbsp;|&nbsp; Prudential<br>
+  <span data-k="disc"></span>
+</div></footer>
+
+<script>
+(function(){
+var PHONE="60142128509";
+var T={
+zh:{brand:"Emily 保险顾问",navCta:"免费报价",
+h1:"先看清风险，再选对保障",
+lead:"我是 Emily，来自 Prudential。我帮客人解决保险上的困惑，检视多年前买的保单，再提供适合您的保障计划。",
+b1:"索取免费报价",b2:"检视我的旧保单",
+rkH:"没有保险，风险也不会等您",rkS:"生活里计划外的事，随时可能发生。没有保障时，您和家人可能要面对这些：",risks:[["突然生病住院","医疗费用高，存款可能不够用。"],["收入中断","生活开销、贷款和子女费用要怎么办？"],["严重意外或残疾","无法工作时，生活和照顾费用从哪里来？"],["家人失去依靠","家里的经济支柱不在了，未来变得不确定。"],["父母年老","医疗和照顾开销，会成为家庭的压力。"]],rkC:"保险不只为今天，更是为了万一发生的明天。现在开始准备，您才有选择的余地。",svcH:"我能帮您什么",svcS:"买了保险但不太清楚保障内容，也是很常见的情况。",
+svc:[["解答保险疑问","用简单的话解释保障范围、保费和限制，让您清楚自己买了什么。"],["检视多年的保单","一起检查旧保单是否还够用，有没有保障缺口或重复。"],["提供合适的保单","根据您的家庭和预算，推荐合适的计划，由您决定。"]],
+plH:"保障类型",plS:"不确定需要哪一种？可以先看看，或直接告诉我您的情况。",
+plans:[["人寿保险","万一发生不幸，为家人留下经济支持，覆盖房贷、生活费和子女教育。"],["医疗与住院保险","应对住院、手术和治疗费用，减轻看病时的经济压力。"],["重大疾病保险","确诊指定重疾时一次性赔付，用于治疗和康复期间的开销。"],["意外保险","意外受伤、残疾或身故时提供赔偿，适合经常外出或从事体力工作的人。"],["储蓄与教育基金","为子女教育或长期目标，边储蓄边获得保障。"],["退休规划","提早准备退休后的稳定收入。"]],
+qH:"索取免费报价",qS:"填写资料后按下按钮，会打开 WhatsApp，把内容发送给我。我会尽快回复您。",
+fn:"姓名",fp:"手机号码",fpp:"例如 012-345 6789",ft:"想了解的内容",fa:"年龄",fap:"例如 35",fm:"其他说明（选填）",fmp:"例如：已有哪些保险、每月预算",
+opts:["还不确定，请给我建议","检视我现有的保单","人寿保险","医疗与住院保险","重大疾病保险","意外保险","储蓄与教育基金","退休规划"],
+fb:"每月预算（RM）",bopts:["请选择","RM 100 以下","RM 100 – 300","RM 300 – 500","RM 500 – 1,000","RM 1,000 以上","还不确定"],errB:"请选择每月预算",send:"通过 WhatsApp 发送",hint:"您的资料只会通过 WhatsApp 发送给我，不会保存在本网站。",errN:"请填写姓名",errP:"请填写手机号码",
+faqH:"常见问题",
+faq:[["报价需要付费吗？","不需要。报价和保障建议都是免费的，您可以比较后再决定。"],["我已经有保险了，还需要吗？","可以把现有保单发给我检查，看看保障是否足够，有没有重复或缺口。"],["怎样拿到我的保单？","投保后，保单会通过安全的方式交给您。如需补发，请直接联系我。"]],
+disc:"本网站内容仅供参考，不构成正式保险合约。实际保障范围、条款和除外责任，以保险公司签发的保单为准。",
+msg:["您好，我想索取保险报价。","姓名：","手机：","想了解：","年龄：","说明：","每月预算："],other:"EN"},
+en:{brand:"Emily · Insurance Advisor",navCta:"Free quote",
+h1:"Understand the risks first, then choose the right cover",
+lead:"I’m Emily from Prudential. I help clients clear up their insurance questions, review policies they bought years ago, and recommend plans that fit.",
+b1:"Get a free quote",b2:"Review my existing policy",
+rkH:"Risk won’t wait until you’re ready",rkS:"Unplanned things can happen at any time. Without cover, you and your family may have to face:",risks:[["Sudden hospital stay","Medical bills are high and savings may not stretch far enough."],["Loss of income","How would living costs, loans and children’s expenses be paid?"],["Serious accident or disability","If you can’t work, where would daily and care costs come from?"],["Family left without support","If the main earner is gone, the family’s future becomes uncertain."],["Ageing parents","Their medical and care costs can become a strain on the household."]],rkC:"Insurance isn’t only for today. It’s for the tomorrow you hope never comes. Prepare now, and you keep your options open.",svcH:"How I can help",svcS:"Owning a policy without being sure what it covers is very common.",
+svc:[["Answer your questions","I explain coverage, premiums and limits in plain language, so you know what you own."],["Review older policies","Together we check whether an old policy still fits, and look for gaps or overlaps."],["Recommend suitable plans","Based on your family and budget, I suggest plans that fit. The decision is yours."]],
+plH:"Types of cover",plS:"Not sure which one you need? Browse here, or just tell me your situation.",
+plans:[["Life insurance","Leaves financial support for your family if the worst happens, covering the mortgage, living costs and children’s education."],["Medical and hospitalisation","Helps with hospital stays, surgery and treatment costs, so illness is less of a financial shock."],["Critical illness","Pays a lump sum when you are diagnosed with a covered illness, for treatment and recovery."],["Personal accident","Pays out for accidental injury, disability or death. Good for people who travel often or do physical work."],["Savings and education fund","Save towards your children’s education or a long-term goal while staying protected."],["Retirement planning","Start early to build a steady income for retirement."]],
+qH:"Get a free quote",qS:"Fill in your details and press the button. WhatsApp will open with your message ready to send to me. I’ll reply as soon as I can.",
+fn:"Name",fp:"Mobile number",fpp:"e.g. 012-345 6789",ft:"What do you want to know about?",fa:"Age",fap:"e.g. 35",fm:"Anything else (optional)",fmp:"e.g. what cover you already have, monthly budget",
+opts:["Not sure yet, please advise","Review my existing policy","Life insurance","Medical and hospitalisation","Critical illness","Personal accident","Savings and education fund","Retirement planning"],
+fb:"Monthly budget (RM)",bopts:["Please select","Below RM 100","RM 100 – 300","RM 300 – 500","RM 500 – 1,000","Above RM 1,000","Not sure yet"],errB:"Please select a monthly budget",send:"Send via WhatsApp",hint:"Your details go to me only through WhatsApp. They are not stored on this website.",errN:"Please enter your name",errP:"Please enter your mobile number",
+faqH:"Frequently asked questions",
+faq:[["Does a quote cost anything?","No. Quotes and advice are free, so you can compare before deciding."],["I already have insurance. Do I need more?","Send me your current policy and I will check whether it is enough and whether there are gaps or overlaps."],["How do I get a copy of my policy?","After you take up a plan, your policy is delivered to you securely. If you need another copy, just contact me."]],
+disc:"This website is for information only and is not an insurance contract. Actual coverage, terms and exclusions are as stated in the policy issued by the insurer.",
+msg:["Hello, I would like to request an insurance quote.","Name: ","Mobile: ","Interested in: ","Age: ","Note: ","Monthly budget: "],other:"中文"}
+};
+var lang="zh";
+try{var s=localStorage.getItem("lang");if(s==="en"||s==="zh")lang=s;}catch(e){}
+var $=function(i){return document.getElementById(i)};
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt)e.textContent=txt;return e}
+function apply(){
+  var d=T[lang];
+  document.documentElement.lang=lang==="zh"?"zh-Hans":"en";
+  document.title=lang==="zh"?"Emily 保险顾问 | Prudential":"Emily · Insurance Advisor | Prudential";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-k]"),function(e){e.textContent=d[e.getAttribute("data-k")]});
+  Array.prototype.forEach.call(document.querySelectorAll("[data-ph]"),function(e){e.placeholder=d[e.getAttribute("data-ph")]});
+  $("lang").textContent=d.other;
+  var sel=$("t"),idx=sel.selectedIndex<0?0:sel.selectedIndex;sel.innerHTML="";
+  d.opts.forEach(function(o){var op=document.createElement("option");op.textContent=o;sel.appendChild(op)});sel.selectedIndex=idx;
+  var sv=$("svc");sv.innerHTML="";d.svc.forEach(function(x){var b=el("div");b.appendChild(el("h3","",x[0]));b.appendChild(el("p","",x[1]));sv.appendChild(b)});
+  var rk=$("risks");rk.innerHTML="";d.risks.forEach(function(x){var b=el("div","risk");b.appendChild(el("h3","",x[0]));b.appendChild(el("p","",x[1]));rk.appendChild(b)});
+  var pl=$("plans");pl.innerHTML="";d.plans.forEach(function(x){var b=el("div","plan");b.appendChild(el("h3","",x[0]));b.appendChild(el("p","",x[1]));pl.appendChild(b)});
+  var fq=$("faq");fq.innerHTML="";d.faq.forEach(function(x){var b=el("details");b.appendChild(el("summary","",x[0]));b.appendChild(el("p","",x[1]));fq.appendChild(b)});
+  var bs=$("b"),bi=bs.selectedIndex<0?0:bs.selectedIndex;bs.innerHTML="";d.bopts.forEach(function(o){var op=document.createElement("option");op.textContent=o;bs.appendChild(op)});bs.selectedIndex=bi;
+  $("en").textContent="";$("ep").textContent="";$("eb").textContent="";
+}
+$("lang").addEventListener("click",function(){lang=lang==="zh"?"en":"zh";try{localStorage.setItem("lang",lang)}catch(e){}apply()});
+$("rv").addEventListener("click",function(){$("t").selectedIndex=1});
+$("qf").addEventListener("submit",function(e){
+  e.preventDefault();var d=T[lang];
+  var n=$("n").value.trim(),p=$("p").value.trim();
+  var bud=$("b").selectedIndex;
+  $("en").textContent=n?"":d.errN;$("ep").textContent=p?"":d.errP;$("eb").textContent=bud>0?"":d.errB;
+  if(!n||!p||bud<1)return;
+  var a=$("a").value.trim(),m=$("m").value.trim(),g=d.msg;
+  var text=g[0]+"\n"+g[1]+n+"\n"+g[2]+p+"\n"+g[3]+$("t").value+(a?"\n"+g[4]+a:"")+"\n"+g[6]+$("b").value+(m?"\n"+g[5]+m:"");
+  window.open("https://wa.me/"+PHONE+"?text="+encodeURIComponent(text),"_blank","noopener");
+});
+apply();
+})();
+</script>
+</body>
+</html>
